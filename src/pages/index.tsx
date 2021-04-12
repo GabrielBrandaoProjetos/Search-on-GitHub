@@ -42,7 +42,7 @@ export default function Home(){
     const [repos, setRepos] = useState([{} as ReposProps])
     const [name, setName] = useState('')
 
-    const [pagination, setPagination] = useState({} as Pagination)
+    const [pagination, setPagination] = useState<Pagination | null>({} as Pagination)
 
     const [searchItem, setSearchItem] = useState<UserProps[] | null>(null)
     const {setHistory} = useHistoric()
@@ -146,8 +146,9 @@ export default function Home(){
                         )
                     })}
                 </Styled.Search>
+                {pagination && (
                 <Styled.Pagination className="searchFooter">
-                    {pagination.prev ? (
+                    {pagination?.prev ? (
                         <button type="button" name="PREV" onClick={() => handlePage(pagination?.prev?.url)}>
                             <Styled.ArrowLeft/>
                         </button>
@@ -157,21 +158,21 @@ export default function Home(){
                         </button>
                     )}
                     
-                    {pagination.first && (
+                    {pagination?.first && (
                         <button onClick={() => handlePage(pagination?.first?.url)}>
                             1
                         </button>
                     )}
                     
                     <button style={{'textDecoration': 'underline'}}>
-                        {pagination.next ? pagination?.next?.numberPage - 1 : pagination?.prev?.numberPage + 1}
+                        {pagination?.next ? pagination?.next?.numberPage - 1 : pagination?.prev?.numberPage + 1}
                     </button>
 
                     <button onClick={() => handlePage(pagination?.last?.url)}>
-                        {pagination?.last?.numberPage ? pagination.last.numberPage : pagination.prev.numberPage + 1}
+                        {pagination?.last?.numberPage ? pagination?.last.numberPage : pagination?.prev.numberPage + 1}
                     </button>
 
-                    {pagination.next ? (
+                    {pagination?.next ? (
                         <button type="button" name="NEXT" onClick={() => handlePage(pagination?.next?.url)}>
                             <Styled.ArrowRight/>
                         </button>
@@ -181,6 +182,7 @@ export default function Home(){
                         </button>
                     )}
                 </Styled.Pagination>
+                )}
                 </>
             )}
             {user && (

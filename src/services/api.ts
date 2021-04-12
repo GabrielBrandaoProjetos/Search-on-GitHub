@@ -17,7 +17,13 @@ export async function getRepos(name: string){
 export async function search(name: string){
     const {headers, data} = await api.get(`search/users?q=${name}`)
     
-    const pagination = handlePagination(headers)
+    const pagination = () => {
+        if (headers.link){
+            return handlePagination(headers)
+        }else{
+            return null
+        }
+    }
 
     return [data, pagination]
 }
@@ -34,7 +40,8 @@ export async function changePage(url: string){
 
 function handlePagination(headers: string){
     const page = String(headers.link).split(',')
-
+    console.log(headers);
+    
     const paginationList = page.map((page) => {
         const name = page.split(';')[1].match(/(prev)|(next)|(last)|(first)/)[0]
     
