@@ -40,7 +40,7 @@ export async function changePage(url: string){
 
 function handlePagination(headers: string){
     const page = String(headers.link).split(',')
-    console.log(headers);
+    
     
     const paginationList = page.map((page) => {
         const name = page.split(';')[1].match(/(prev)|(next)|(last)|(first)/)[0]
