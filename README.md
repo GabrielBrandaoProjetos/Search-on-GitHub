@@ -4,9 +4,9 @@ A React.js app that searches for users on GitHub
 ## Layout web
 
 !["Home"](https://github.com/GabrielBrandaoProjetos/Search-on-GitHub/blob/master/public/assets/home.PNG)
-![Home](https://github.com/GabrielBrandaoProjetos/Search-on-GitHub/blob/master/public/assets/search.PNG)
-![Home](https://github.com/GabrielBrandaoProjetos/Search-on-GitHub/blob/master/public/assets/user.PNG)
-![Home](https://github.com/GabrielBrandaoProjetos/Search-on-GitHub/blob/master/public/assets/history.PNG)
+![Search](https://github.com/GabrielBrandaoProjetos/Search-on-GitHub/blob/master/public/assets/search.PNG)
+![User](https://github.com/GabrielBrandaoProjetos/Search-on-GitHub/blob/master/public/assets/user.PNG)
+![History](https://github.com/GabrielBrandaoProjetos/Search-on-GitHub/blob/master/public/assets/history.PNG)
 
 ## About this Project
 
