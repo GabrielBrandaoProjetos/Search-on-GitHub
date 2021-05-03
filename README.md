@@ -1,4 +1,4 @@
-# Search-on-GitHub
+# Search on GitHub
 A React.js app that searches for users on GitHub
 
 ## Layout web
